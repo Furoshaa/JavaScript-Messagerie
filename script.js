@@ -4,6 +4,9 @@ document.querySelector('button').addEventListener('click', Deplacer);
 // Lance un script "ModifierAspectClavier" au chargement de la page
 window.addEventListener('load', ModifierAspectClavier); 
 
+// Compteur de message
+let compteur = 0;
+
 function Deplacer() {
     // Recupere la textarea avec getElementById
     const textarea = document.getElementById('clavier');
@@ -23,6 +26,16 @@ function Deplacer() {
     
     // Utilise innerHTML pour ajouter le contenu
     newMessage.innerHTML = message;
+
+    // Ajoute une classe a la div
+    if (compteur % 2 === 0) {
+        newMessage.classList.add('texte', 'gauche');
+    } else {
+        newMessage.classList.add('texte', 'droite');
+    }
+
+    // Incremente le compteur
+    compteur++;
     
     // Utilise appendChild pour ajouter le message
     affichage.appendChild(newMessage);
