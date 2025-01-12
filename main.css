@@ -39,3 +39,28 @@ button, h1 {
     border: 1px solid #0000ff;
     margin-right: 100px;
 }
+
+/* Mobile version */
+@media screen and (max-width: 768px) {
+    .affichage {
+        min-width: 90%;
+        width: 90%;
+    }
+
+    .texte {
+        padding: 5px;
+        margin: 1px;
+    }
+
+    .droite {
+        margin-left: 30px;
+    }
+
+    .gauche {
+        margin-right: 30px;
+    }
+
+    button {
+        width: 50%;
+    }
+}

@@ -58,9 +58,21 @@ function ModifierAspectClavier() {
     // Recupere la textarea avec getElementById
     const textarea = document.getElementById('clavier');
     
-    // Modifie la taille de la textarea
-    textarea.style.width = '50%';
-    textarea.style.minWidth = '400px';
+    // Versio mobile du site
+    if (window.innerWidth <= 768) {
+        textarea.style.width = '90%';
+        textarea.style.minWidth = '90%';
+        textarea.style.maxWidth = '90%';
+        textarea.style.minHeight = '60px';
+    } else {
+        // Version desktop du site
+        textarea.style.width = '50%';
+        textarea.style.minWidth = '400px';
+    }
+    
     textarea.style.overflow = 'auto';
     textarea.style.resize = 'vertical';
-};
+}
+
+// Add resize listener to update styles when window is resized
+window.addEventListener('resize', ModifierAspectClavier);
