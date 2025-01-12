@@ -1,6 +1,13 @@
 // Ecouteur d'evenement sur le bouton avec querySelector
 document.querySelector('button').addEventListener('click', Deplacer);
 
+// BONUS : Ecouteur d'evenement sur la touche "Enter" avec addEventListener
+document.getElementById('clavier').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        Deplacer();
+    }
+});
+
 // Lance un script "ModifierAspectClavier" au chargement de la page
 window.addEventListener('load', ModifierAspectClavier); 
 
@@ -42,6 +49,9 @@ function Deplacer() {
     
     // Vide la textarea
     textarea.value = '';
+
+    // BONUS : Scroll automatique de l'affiche
+    document.getElementById('affichage').scrollTop = document.getElementById('affichage').scrollHeight;
 };
 
 function ModifierAspectClavier() {
@@ -54,18 +64,3 @@ function ModifierAspectClavier() {
     textarea.style.overflow = 'auto';
     textarea.style.resize = 'vertical';
 };
-
-///////////////////////////// Le code suivant n'est pas demandé dans l'exercice //////////////////////////////
-///////////////// Je l'ai simplement ajouté moi meme pour rendre le projet plus sympa a voir /////////////////
-
-// Ecouteur d'evenement sur la touche entré du clavier
-document.getElementById('clavier').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        Deplacer();
-    }
-});
-
-// Faire descendre la scrollbar automatiquement
-document.getElementById('affichage').addEventListener('DOMNodeInserted', function() {
-    document.getElementById('affichage').scrollTop = document.getElementById('affichage').scrollHeight;
-});
