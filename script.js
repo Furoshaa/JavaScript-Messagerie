@@ -42,7 +42,7 @@ function Deplacer() {
     
     // Vide la textarea
     textarea.value = '';
-}
+};
 
 function ModifierAspectClavier() {
     // Recupere la textarea avec getElementById
@@ -53,4 +53,19 @@ function ModifierAspectClavier() {
     textarea.style.minWidth = '400px';
     textarea.style.overflow = 'auto';
     textarea.style.resize = 'vertical';
-}
+};
+
+///////////////////////////// Le code suivant n'est pas demandé dans l'exercice //////////////////////////////
+///////////////// Je l'ai simplement ajouté moi meme pour rendre le projet plus sympa a voir /////////////////
+
+// Ecouteur d'evenement sur la touche entré du clavier
+document.getElementById('clavier').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        Deplacer();
+    }
+});
+
+// Faire descendre la scrollbar automatiquement
+document.getElementById('affichage').addEventListener('DOMNodeInserted', function() {
+    document.getElementById('affichage').scrollTop = document.getElementById('affichage').scrollHeight;
+});
