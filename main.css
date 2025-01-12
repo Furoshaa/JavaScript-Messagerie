@@ -21,3 +21,21 @@ button, h1 {
 * {
     font-family: monospace;
 }
+
+.texte {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 2px;
+}
+
+.droite {
+    background-color: #aaffaa;
+    border: 1px solid #00ff00;
+    margin-left: 100px;
+}
+
+.gauche {
+    background-color: #aaaaff;
+    border: 1px solid #0000ff;
+    margin-right: 100px;
+}
