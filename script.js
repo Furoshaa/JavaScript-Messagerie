@@ -1,6 +1,9 @@
 // Ecouteur d'evenement sur le bouton avec querySelector
 document.querySelector('button').addEventListener('click', Deplacer);
 
+// Lance un script "ModifierAspectClavier" au chargement de la page
+window.addEventListener('load', ModifierAspectClavier); 
+
 function Deplacer() {
     // Recupere la textarea avec getElementById
     const textarea = document.getElementById('clavier');
@@ -26,4 +29,15 @@ function Deplacer() {
     
     // Vide la textarea
     textarea.value = '';
+}
+
+function ModifierAspectClavier() {
+    // Recupere la textarea avec getElementById
+    const textarea = document.getElementById('clavier');
+    
+    // Modifie la taille de la textarea
+    textarea.style.width = '50%';
+    textarea.style.minWidth = '400px';
+    textarea.style.overflow = 'auto';
+    textarea.style.resize = 'vertical';
 }
